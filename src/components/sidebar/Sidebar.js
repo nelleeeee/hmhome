@@ -51,6 +51,7 @@ export default Sidebar;
 const SidebarContainer = styled.div`
   width: 10%;
   min-width: 150px;
+  min-height: 900px;
   /* height: 80vh; */
   background-color: #ffc800;
   display: flex;
