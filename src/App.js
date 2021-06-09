@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import styled from "styled-components";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db } from "./firebase";
+import "./App.css";
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
+import Footer from "./components/footer/Footer";
+
+import FanSign from "./components/body/fansign/FanSign";
+import Home from "./components/body/home/Home";
+import Faq from "./components/body/faq/Faq";
+import Notice from "./components/body/notice/Notice";
+import Write from "./components/hooks/Write";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Router>
+        <>
+          <Header />
+
+          <SidebarAppBody>
+            <Sidebar />
+            <AppBody>
+              <Route exact path="/write" component={Write} />
+              <Route exact path="/notice" component={Notice} />
+              <Route exact path="/faq" component={Faq} />
+              <Route exact path="/fansign" component={FanSign} />
+              <Route exact path="/" component={Home} />
+            </AppBody>
+          </SidebarAppBody>
+          <Footer />
+        </>
+      </Router>
+    </AppContainer>
   );
 }
 
 export default App;
+
+const AppContainer = styled.div`
+  /* height: 100vh; */
+`;
+
+const SidebarAppBody = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const AppBody = styled.div`
+  /* background-color: blue; */
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+`;
