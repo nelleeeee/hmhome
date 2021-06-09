@@ -2,6 +2,10 @@ import { useState } from "react";
 import EditorComponent from "./Editor";
 import styled from "styled-components";
 import { Button, makeStyles, MenuItem, TextField } from "@material-ui/core";
+import { db } from "../../firebase";
+import firebase from "firebase";
+import { useHistory } from "react-router";
+import ImageUploader from "./ImageUploader";
 
 const Write = () => {
   //    본문 state
@@ -35,6 +39,23 @@ const Write = () => {
     setCategory(event.target.value);
   };
 
+  // 글쓰기 버튼
+  const history = useHistory();
+  const makeWrite = e => {
+    e.preventDefault();
+    db.collection("content").doc().set({
+      title: title,
+      aut: aut,
+      content: desc,
+      category: category,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      fileUrl: fileUrl,
+    });
+    history.push({
+      pathname: "/",
+    });
+  };
+
   // 타이틀 state
   const [title, setTitle] = useState();
 
@@ -47,6 +68,13 @@ const Write = () => {
 
   const handleAut = e => {
     setAut(e.target.value);
+  };
+
+  // 파일 이름 state
+  const [fileUrl, setFileUrl] = useState();
+  const [dis, setDis] = useState(true);
+  const handleUrl = e => {
+    setFileUrl(e);
   };
 
   return (
@@ -80,14 +108,28 @@ const Write = () => {
           style={{ marginTop: "20px", width: "45%" }}
         />
       </EditorCategoryAut>
-
+      <ImageUploader handleUrl={handleUrl} setDis={setDis} />
       <EditorComponent value={desc} onChange={onEditorChange} />
-      <EditorWriteButton
-        variant="contained"
-        style={{ marginTop: "20px", marginBottom: "20px", width: "20%" }}
-      >
-        글쓰기
-      </EditorWriteButton>
+      {title && aut && desc && dis ? (
+        <EditorWriteButton
+          onClick={makeWrite}
+          type="submit"
+          variant="contained"
+          style={{ marginTop: "20px", marginBottom: "20px", width: "20%" }}
+        >
+          글쓰기
+        </EditorWriteButton>
+      ) : (
+        <EditorWriteButton
+          disabled
+          onClick={makeWrite}
+          type="submit"
+          variant="contained"
+          style={{ marginTop: "20px", marginBottom: "20px", width: "20%" }}
+        >
+          글쓰기
+        </EditorWriteButton>
+      )}
     </EditorContainer>
   );
 };

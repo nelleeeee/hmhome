@@ -18,7 +18,7 @@ class EditorComponent extends Component {
         { indent: "-1" },
         { indent: "+1" },
       ],
-      ["link", "image"],
+      ["link"],
       [{ align: [] }, { color: [] }, { background: [] }], // dropdown with defaults from theme
       ["clean"],
     ],

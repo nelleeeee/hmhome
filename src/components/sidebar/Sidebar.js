@@ -21,8 +21,8 @@ function Sidebar() {
       </NoticeContainer>
       <CsContainer>
         <CsContainerText>{"お問合せ"}</CsContainerText>
-        <CsContainerLine src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/KakaoTalk_Photo_2021-06-05-16-50-51.jpeg?alt=media&token=542eb021-c669-4545-92a7-67fe2e951d30" />
-        <CsContainerKakao src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/KakaoTalk_Photo_2021-06-05-16-51-02.jpeg?alt=media&token=b24c3770-d48f-4cad-89a3-7ab7754fb870" />
+        <CsContainerLine src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/data%2FKakaoTalk_Photo_2021-06-09-22-59-56.jpeg?alt=media&token=dddfb050-d751-4767-9d4d-1f8c05c4e4df" />
+        <CsContainerKakao src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/data%2FKakaoTalk_Photo_2021-06-09-22-59-48.jpeg?alt=media&token=8c2d0ea6-dc3a-4bc1-9fab-7df268db8e5b" />
         <CsContainerId> ID : sisterkpop</CsContainerId>
       </CsContainer>
       <EventContainer>
@@ -33,7 +33,7 @@ function Sidebar() {
         </EventContainerText>
 
         <EventContainerLogo
-          src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/pngaaa.com-4114571.png?alt=media&token=3de313bb-046e-417e-91e5-472ee86b86a4"
+          src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/data%2Fpngaaa.com-4114571.png?alt=media&token=a02a78b3-0e7d-4556-8226-b80ddc93535e"
           onClick={() =>
             window.open(
               "https://docs.google.com/forms/d/e/1FAIpQLSck87c8Zp0tAU6T26vgvj_0shts6isXF64QbLSKpBo7euPvmQ/viewform",

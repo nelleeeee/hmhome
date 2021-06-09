@@ -17,6 +17,7 @@ import FanSignList from "./components/body/fansign/FanSignList";
 import EventsContent from "./components/body/fansign/EventsContent";
 import LuckyList from "./components/body/lucky/LuckyList";
 import GoodsList from "./components/body/goods/GoodsList";
+import NoticeContent from "./components/body/notice/NoticeContent";
 
 function App() {
   return (
@@ -30,6 +31,11 @@ function App() {
             <AppBody>
               <Route exact path="/write" component={Write} />
               <Route exact path="/notice" component={Notice} />
+              <Route
+                exact
+                path="/noticecontent/:id"
+                component={NoticeContent}
+              />
               <Route exact path="/faq" component={Faq} />
               <Route exact path="/fansign" component={FanSignList} />
               <Route exact path="/lucky" component={LuckyList} />

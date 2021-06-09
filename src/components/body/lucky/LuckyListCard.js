@@ -40,6 +40,7 @@ const LuckyListCardContainer = styled.div`
   margin-bottom: 30px;
   min-width: 550px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
   :hover {
     cursor: pointer;
   }
