@@ -8,6 +8,8 @@ function Home() {
     <HomeContainer>
       <>
         <EventSlider />
+
+        <ContentCard />
         <ContentCard />
       </>
     </HomeContainer>

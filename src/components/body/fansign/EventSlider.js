@@ -17,12 +17,11 @@ function EventSlider() {
     <Wrap>
       <Slider {...settings}>
         <EventContainer>
-          <EventImage src="https://img.hankyung.com/photo/201911/2019111515332948327-540x360.jpg"></EventImage>
+          <EventImage src="http://dailymedi.com//wys2/file_attach/2020/10/15/1602726389-49.jpeg"></EventImage>
           <Askndaskf>
             【MONSTA X《ONE OF A KIND》】ラキドロ購入イベント
           </Askndaskf>
         </EventContainer>
-
         <EventContainer>
           <EventImage src="https://img.hankyung.com/photo/201911/2019111515332948327-540x360.jpg"></EventImage>
           <Askndaskf>

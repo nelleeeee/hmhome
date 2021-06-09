@@ -2,34 +2,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function ContentCard() {
+function GoodsListCard() {
   return (
     <Link
       to="/EventsContent"
       style={{ textDecoration: "none", color: "black" }}
     >
-      <ContentCardContainer>
-        <ContentCardTitle>
+      <GoodsListCardContainer>
+        <GoodsListCardTitle>
           韓国SOUNDWAVE 【MONSTA X《ONE OF A KIND》】ラキドロ購入イベント
-        </ContentCardTitle>
+        </GoodsListCardTitle>
 
-        <ContentCardContent>
-          <ContentCardImage src="https://img.hankyung.com/photo/201911/2019111515332948327-540x360.jpg" />
-          <ContentCardDetail>
+        <GoodsListCardContent>
+          <GoodsListCardImage src="http://www.newstap.co.kr/news/photo/202011/122792_203430_1117.jpg" />
+          <GoodsListCardDetail>
             韓国サイト【TXT《FREEZE》】で行われる購入イベントの購入代行をいたします。
             数量限りの購入イベントで … 続きを読む
-          </ContentCardDetail>
-        </ContentCardContent>
-      </ContentCardContainer>
+          </GoodsListCardDetail>
+        </GoodsListCardContent>
+      </GoodsListCardContainer>
     </Link>
   );
 }
 
-export default ContentCard;
+export default GoodsListCard;
 
-const ContentCardContainer = styled.div`
-  height: 200px;
-  width: 70%;
+const GoodsListCardContainer = styled.div`
+  height: 600px;
+  width: 60%;
   margin: auto;
   /* background-color: brown; */
   display: flex;
@@ -37,29 +37,31 @@ const ContentCardContainer = styled.div`
   padding: 10px;
   border: 1px solid lightgray;
   margin-top: 20px;
-  margin-bottom: 20px;
-  min-width: 650px;
+  margin-bottom: 30px;
+  min-width: 550px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   :hover {
     cursor: pointer;
   }
 `;
 
-const ContentCardContent = styled.div`
+const GoodsListCardContent = styled.div`
   height: 100%;
   display: flex;
+  flex-direction: column;
 `;
 
-const ContentCardTitle = styled.div`
+const GoodsListCardTitle = styled.div`
   font-size: 18px;
   font-weight: 700;
   text-align: center;
   margin: 10px;
 `;
-const ContentCardImage = styled.img`
-  height: 80%;
+const GoodsListCardImage = styled.img`
+  height: 70%;
+  padding: 5px;
 `;
-const ContentCardDetail = styled.div`
+const GoodsListCardDetail = styled.div`
   margin-left: 15px;
   padding: 5px;
 `;

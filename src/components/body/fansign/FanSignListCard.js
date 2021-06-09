@@ -2,34 +2,34 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function ContentCard() {
+function FanSignListCard() {
   return (
     <Link
       to="/EventsContent"
       style={{ textDecoration: "none", color: "black" }}
     >
-      <ContentCardContainer>
-        <ContentCardTitle>
+      <FanSignListCardContainer>
+        <FanSignListCardTitle>
           韓国SOUNDWAVE 【MONSTA X《ONE OF A KIND》】ラキドロ購入イベント
-        </ContentCardTitle>
+        </FanSignListCardTitle>
 
-        <ContentCardContent>
-          <ContentCardImage src="https://img.hankyung.com/photo/201911/2019111515332948327-540x360.jpg" />
-          <ContentCardDetail>
+        <FanSignListCardContent>
+          <FanSignListCardImage src="https://img.hankyung.com/photo/201911/2019111515332948327-540x360.jpg" />
+          <FanSignListCardDetail>
             韓国サイト【TXT《FREEZE》】で行われる購入イベントの購入代行をいたします。
             数量限りの購入イベントで … 続きを読む
-          </ContentCardDetail>
-        </ContentCardContent>
-      </ContentCardContainer>
+          </FanSignListCardDetail>
+        </FanSignListCardContent>
+      </FanSignListCardContainer>
     </Link>
   );
 }
 
-export default ContentCard;
+export default FanSignListCard;
 
-const ContentCardContainer = styled.div`
-  height: 200px;
-  width: 70%;
+const FanSignListCardContainer = styled.div`
+  height: 600px;
+  width: 60%;
   margin: auto;
   /* background-color: brown; */
   display: flex;
@@ -37,29 +37,31 @@ const ContentCardContainer = styled.div`
   padding: 10px;
   border: 1px solid lightgray;
   margin-top: 20px;
-  margin-bottom: 20px;
-  min-width: 650px;
+  margin-bottom: 30px;
+  min-width: 550px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   :hover {
     cursor: pointer;
   }
 `;
 
-const ContentCardContent = styled.div`
+const FanSignListCardContent = styled.div`
   height: 100%;
   display: flex;
+  flex-direction: column;
 `;
 
-const ContentCardTitle = styled.div`
+const FanSignListCardTitle = styled.div`
   font-size: 18px;
   font-weight: 700;
   text-align: center;
   margin: 10px;
 `;
-const ContentCardImage = styled.img`
-  height: 80%;
+const FanSignListCardImage = styled.img`
+  height: 70%;
+  padding: 5px;
 `;
-const ContentCardDetail = styled.div`
+const FanSignListCardDetail = styled.div`
   margin-left: 15px;
   padding: 5px;
 `;

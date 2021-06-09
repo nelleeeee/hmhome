@@ -8,11 +8,15 @@ import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import Footer from "./components/footer/Footer";
 
-import FanSign from "./components/body/fansign/FanSign";
+import FanSign from "./components/body/fansign/EventsContent";
 import Home from "./components/body/home/Home";
 import Faq from "./components/body/faq/Faq";
 import Notice from "./components/body/notice/Notice";
 import Write from "./components/hooks/Write";
+import FanSignList from "./components/body/fansign/FanSignList";
+import EventsContent from "./components/body/fansign/EventsContent";
+import LuckyList from "./components/body/lucky/LuckyList";
+import GoodsList from "./components/body/goods/GoodsList";
 
 function App() {
   return (
@@ -27,7 +31,10 @@ function App() {
               <Route exact path="/write" component={Write} />
               <Route exact path="/notice" component={Notice} />
               <Route exact path="/faq" component={Faq} />
-              <Route exact path="/fansign" component={FanSign} />
+              <Route exact path="/fansign" component={FanSignList} />
+              <Route exact path="/lucky" component={LuckyList} />
+              <Route exact path="/goods" component={GoodsList} />
+              <Route exact path="/eventscontent" component={EventsContent} />
               <Route exact path="/" component={Home} />
             </AppBody>
           </SidebarAppBody>

@@ -12,9 +12,18 @@ function Header() {
         <Link to="/notice" style={{ textDecoration: "none", color: "white" }}>
           <HeaderMenu1>お知らせ</HeaderMenu1>
         </Link>
-        <HeaderMenu2>サイン会代行</HeaderMenu2>
-        <HeaderMenu3>ラッキードロー代行</HeaderMenu3>
-        <HeaderMenu4>グッズ代行</HeaderMenu4>
+
+        <Link to="/fansign" style={{ textDecoration: "none", color: "white" }}>
+          <HeaderMenu2>サイン会代行</HeaderMenu2>
+        </Link>
+
+        <Link to="/lucky" style={{ textDecoration: "none", color: "white" }}>
+          <HeaderMenu3>ラッキードロー代行</HeaderMenu3>
+        </Link>
+
+        <Link to="/goods" style={{ textDecoration: "none", color: "white" }}>
+          <HeaderMenu4>グッズ代行</HeaderMenu4>
+        </Link>
         <Link to="/faq" style={{ textDecoration: "none", color: "white" }}>
           <HeaderMenu5>お問合せ</HeaderMenu5>
         </Link>

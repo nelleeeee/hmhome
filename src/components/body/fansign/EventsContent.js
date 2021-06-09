@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-function FanSign() {
+function EventsContent() {
   return (
-    <FanSignContainer>
-      <FanSignImage src="https://img.hankyung.com/photo/201911/2019111515332948327-540x360.jpg"></FanSignImage>
-      <FanSignTitle>
+    <EventsContentContainer>
+      <EventsContentImage src="https://img.hankyung.com/photo/201911/2019111515332948327-540x360.jpg"></EventsContentImage>
+      <EventsContentTitle>
         韓国MAKESTAR【WEi《IDENTITY :
         Action》/6月19日20:30】メンバー別ビデオ通話サイン会
-      </FanSignTitle>
-      <FanSignDetail>
-        <FanSignDetailInfo>
+      </EventsContentTitle>
+      <EventsContentDetail>
+        <EventsContentDetailInfo>
           代行応募期間：6月8日 12時までにご入金完了
           <br />
           当選発表：6月9日17時以降　
@@ -30,8 +30,8 @@ function FanSign() {
           <br />
           (同じメンバーに複数当選した場合、1回のみ参加可)
           <br />
-        </FanSignDetailInfo>
-        <FanSignDetailGift>
+        </EventsContentDetailInfo>
+        <EventsContentDetailGift>
           特典
           <br />
           参加者全員
@@ -40,8 +40,8 @@ function FanSign() {
           <br />
           (アルバム1枚あたりランダム1枚、合計6種,
           前のイベントフォトカードと別バージョン)
-        </FanSignDetailGift>
-        <FanSignDetailCs>
+        </EventsContentDetailGift>
+        <EventsContentDetailCs>
           外国に滞在されている方の場合、配送代行地または他人の連絡先ではなく、必ずご本人の連絡先を国番号を含めてご記入ください。ご本人と繋がらない連絡先を記載したことによって発生した不利益に関しましては責任を負いかねません。
           <br />
           1.
@@ -67,8 +67,8 @@ function FanSign() {
           <br />
           5.
           応募するアプリはIDで友達検索および追加がONに設定されているかを必ずご確認ください。提供していただいたアプリの情報で友達追加ができなかったり、登録できない場合に発生する問題に関しては責任を負いかねません。
-        </FanSignDetailCs>
-        <FanSignDetailPrice>
+        </EventsContentDetailCs>
+        <EventsContentDetailPrice>
           韓国→東京経由での配送になります。
           <br />
           ＊CD送料＊
@@ -89,8 +89,8 @@ function FanSign() {
           <br />
           後日の追加料金はありません。
           <br />
-        </FanSignDetailPrice>
-        <FanSignDetailHow>
+        </EventsContentDetailPrice>
+        <EventsContentDetailHow>
           1.こちらからご希望枚数ご購入ください。
           <br />
           2.お支払い
@@ -106,15 +106,15 @@ function FanSign() {
           6.CD発送もしくは破棄
           <br />
           ※CD発送時期はサイン会終了後順次発送予定
-        </FanSignDetailHow>
-      </FanSignDetail>
-    </FanSignContainer>
+        </EventsContentDetailHow>
+      </EventsContentDetail>
+    </EventsContentContainer>
   );
 }
 
-export default FanSign;
+export default EventsContent;
 
-const FanSignContainer = styled.div`
+const EventsContentContainer = styled.div`
   width: 70%;
   min-width: 650px;
   margin: auto;
@@ -122,41 +122,41 @@ const FanSignContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-const FanSignImage = styled.img`
+const EventsContentImage = styled.img`
   background-size: cover;
   width: 100%;
   margin-bottom: 20px;
 `;
 
-const FanSignTitle = styled.div`
+const EventsContentTitle = styled.div`
   margin-bottom: 20px;
   font-size: 25px;
   font-weight: 800;
 `;
 
-const FanSignDetail = styled.div`
+const EventsContentDetail = styled.div`
   margin-bottom: 20px;
 `;
 
-const FanSignDetailInfo = styled.div`
+const EventsContentDetailInfo = styled.div`
   margin-bottom: 20px;
   br {
     margin-bottom: 3px;
   }
 `;
 
-const FanSignDetailGift = styled.div`
+const EventsContentDetailGift = styled.div`
   margin-bottom: 20px;
 `;
 
-const FanSignDetailCs = styled.div`
+const EventsContentDetailCs = styled.div`
   margin-bottom: 20px;
 `;
 
-const FanSignDetailPrice = styled.div`
+const EventsContentDetailPrice = styled.div`
   margin-bottom: 20px;
 `;
 
-const FanSignDetailHow = styled.div`
+const EventsContentDetailHow = styled.div`
   margin-bottom: 20px;
 `;
