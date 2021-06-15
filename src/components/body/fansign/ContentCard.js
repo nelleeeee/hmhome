@@ -28,17 +28,16 @@ function ContentCard() {
 export default ContentCard;
 
 const ContentCardContainer = styled.div`
-  height: 200px;
-  width: 70%;
-  margin: auto;
+  height: 300px;
+  width: 200px;
+  /* width: 5%; */
+  margin: 20px;
   /* background-color: brown; */
   display: flex;
   flex-direction: column;
   padding: 10px;
   border: 1px solid lightgray;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  min-width: 650px;
+
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   :hover {
     cursor: pointer;
@@ -47,19 +46,22 @@ const ContentCardContainer = styled.div`
 
 const ContentCardContent = styled.div`
   height: 100%;
+
   display: flex;
+  flex-direction: column;
 `;
 
 const ContentCardTitle = styled.div`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   text-align: center;
   margin: 10px;
 `;
 const ContentCardImage = styled.img`
-  height: 80%;
+  height: 60%;
 `;
 const ContentCardDetail = styled.div`
   margin-left: 15px;
   padding: 5px;
+  font-size: 13px;
 `;

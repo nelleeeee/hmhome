@@ -65,7 +65,7 @@ const Wrap = styled.div`
 
 const EventContainer = styled.div`
   background-color: gray;
-  /* height: 40%; */
+  display: flex;
   width: 70%;
   margin: auto;
   margin-top: 30px;
@@ -79,8 +79,7 @@ const EventImage = styled.img`
   height: 100%;
   width: 100%;
   z-index: 0 !important;
-
-  /* position: absolute !important; */
+  border-radius: 20px !important;
 `;
 
 const Askndaskf = styled.label`

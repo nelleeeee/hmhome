@@ -18,6 +18,8 @@ import EventsContent from "./components/body/fansign/EventsContent";
 import LuckyList from "./components/body/lucky/LuckyList";
 import GoodsList from "./components/body/goods/GoodsList";
 import NoticeContent from "./components/body/notice/NoticeContent";
+import Info from "./components/body/info/Info";
+import Guide from "./components/sidebar/Guide";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <SidebarAppBody>
             <Sidebar />
             <AppBody>
+              <Route exact path="/guide" component={Guide} />
+              <Route exact path="/info" component={Info} />
               <Route exact path="/write" component={Write} />
               <Route exact path="/notice" component={Notice} />
               <Route

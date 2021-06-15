@@ -25,6 +25,13 @@ function Sidebar() {
         <CsContainerKakao src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/data%2FKakaoTalk_Photo_2021-06-09-22-59-48.jpeg?alt=media&token=8c2d0ea6-dc3a-4bc1-9fab-7df268db8e5b" />
         <CsContainerId> ID : sisterkpop</CsContainerId>
       </CsContainer>
+
+      <Link to="/guide">
+        <GuideContainer>
+          <GuideImage src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/images%2Ff99221779f2194fbdd9f3a1c648eb304.jpeg?alt=media&token=8caf1889-5186-4296-8a8a-d13e6a355949" />
+        </GuideContainer>
+      </Link>
+
       <EventContainer>
         <EventContainerText>
           {"イベント"}
@@ -96,6 +103,17 @@ const CsContainerKakao = styled.img`
 const CsContainerId = styled.div`
   font-size: smaller;
   margin-top: 3px;
+`;
+
+// 가이드 컨테이너
+const GuideContainer = styled.div`
+  margin-top: 10px;
+`;
+
+const GuideImage = styled.img`
+  height: 80px;
+  border-radius: 10px;
+  cursor: pointer;
 `;
 
 const EventContainer = styled.div`
