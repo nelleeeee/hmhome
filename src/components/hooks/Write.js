@@ -57,21 +57,21 @@ const Write = () => {
   };
 
   // 타이틀 state
-  const [title, setTitle] = useState();
+  const [title, setTitle] = useState("");
 
   const handleTitle = e => {
     setTitle(e.target.value);
   };
 
   // 글쓴이 state
-  const [aut, setAut] = useState();
+  const [aut, setAut] = useState("");
 
   const handleAut = e => {
     setAut(e.target.value);
   };
 
   // 파일 이름 state
-  const [fileUrl, setFileUrl] = useState();
+  const [fileUrl, setFileUrl] = useState("");
   const [dis, setDis] = useState(true);
   const handleUrl = e => {
     setFileUrl(e);

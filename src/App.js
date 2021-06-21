@@ -20,6 +20,7 @@ import GoodsList from "./components/body/goods/GoodsList";
 import NoticeContent from "./components/body/notice/NoticeContent";
 import Info from "./components/body/info/Info";
 import Guide from "./components/sidebar/Guide";
+import LuckyContent from "./components/body/lucky/LuckyContent";
 
 function App() {
   return (
@@ -43,8 +44,13 @@ function App() {
               <Route exact path="/faq" component={Faq} />
               <Route exact path="/fansign" component={FanSignList} />
               <Route exact path="/lucky" component={LuckyList} />
+              <Route exact path="/lucky/:id" component={LuckyContent} />
               <Route exact path="/goods" component={GoodsList} />
-              <Route exact path="/eventscontent" component={EventsContent} />
+              <Route
+                exact
+                path="/eventscontent/:id"
+                component={EventsContent}
+              />
               <Route exact path="/" component={Home} />
             </AppBody>
           </SidebarAppBody>
@@ -58,7 +64,7 @@ function App() {
 export default App;
 
 const AppContainer = styled.div`
-  /* height: 100vh; */
+  background-color: whitesmoke;
 `;
 
 const SidebarAppBody = styled.div`
@@ -67,9 +73,10 @@ const SidebarAppBody = styled.div`
 `;
 
 const AppBody = styled.div`
-  /* background-color: blue; */
   width: 80%;
-
+  /* margin: auto; */
+  margin-left: 150px;
   display: flex;
+  min-height: 700px;
   flex-direction: column;
 `;

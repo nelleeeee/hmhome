@@ -1,27 +1,36 @@
 import React, { Component } from "react";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
+// import ImageResize from "quill-image-resize-module";
 
 class EditorComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   modules = {
-    toolbar: [
-      //[{ 'font': [] }],
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [
-        { list: "ordered" },
-        { list: "bullet" },
-        { indent: "-1" },
-        { indent: "+1" },
+    toolbar: {
+      container: [
+        [{ header: [1, 2, 3, 4, 5, false] }],
+        ["bold", "italic", "underline", "strike", "blockquote"],
+        [
+          { align: "" },
+          { align: "center" },
+          { align: "right" },
+          { align: "justify" },
+        ],
+        [
+          { list: "ordered" },
+          { list: "bullet" },
+          { indent: "-1" },
+          { indent: "+1" },
+        ],
+        // ["image", "video"],
+        [{ color: [] }, { background: [] }],
+        ["clean"],
+        ["blockquote", "link", "code-block", "formula"], // media
       ],
-      ["link"],
-      [{ align: [] }, { color: [] }, { background: [] }], // dropdown with defaults from theme
-      ["clean"],
-    ],
+      handlers: {
+        image: this.imageHandler,
+      },
+    },
+    imageResize: false,
   };
 
   formats = [
@@ -40,6 +49,7 @@ class EditorComponent extends Component {
     "align",
     "color",
     "background",
+    "code-block",
   ];
 
   render() {

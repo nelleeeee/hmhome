@@ -14,7 +14,7 @@ function NoticeRow({ id, title, createdAt }) {
       style={{ textDecoration: "none", color: "black" }}
     >
       <NoticeRowContainer>
-        <NoticeRowTitle>{title}</NoticeRowTitle>
+        {"[NOTICE]"} <NoticeRowTitle>&nbsp;{title}</NoticeRowTitle>
         <NoticeRowDate>
           {"date  : "}
           {d}

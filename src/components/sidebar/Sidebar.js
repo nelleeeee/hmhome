@@ -56,11 +56,15 @@ function Sidebar() {
 export default Sidebar;
 
 const SidebarContainer = styled.div`
-  width: 10%;
-  min-width: 150px;
-  min-height: 900px;
-  /* height: 80vh; */
-  background-color: #ffc800;
+  width: 8%;
+  min-width: 130px;
+  /* min-height: 900px; */
+  position: fixed;
+  height: 580px;
+  top: 20;
+  border-radius: 15px;
+  margin-left: 15px;
+  background-color: #ffe600a4;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +76,7 @@ const NoticeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 10px;
 `;
 const NoticeContainerText = styled.div``;
@@ -89,7 +93,7 @@ const CsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 const CsContainerText = styled.div``;
 const CsContainerLine = styled.img`
@@ -111,7 +115,7 @@ const GuideContainer = styled.div`
 `;
 
 const GuideImage = styled.img`
-  height: 80px;
+  height: 60px;
   border-radius: 10px;
   cursor: pointer;
 `;
@@ -121,11 +125,11 @@ const EventContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 const EventContainerText = styled.div``;
 const EventContainerLogo = styled.img`
-  height: 80px;
+  height: 70px;
   margin-top: 5px;
   :hover {
     cursor: pointer;

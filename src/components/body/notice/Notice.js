@@ -7,6 +7,7 @@ function Notice() {
   const [contentLists, setContentLists] = useState([]);
   useEffect(() => {
     db.collection("content")
+      .orderBy("createdAt", "desc")
       .where("category", "==", "공지사항")
       .onSnapshot(snapshot => {
         setContentLists(

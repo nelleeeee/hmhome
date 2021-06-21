@@ -32,15 +32,16 @@ const ContentCardContainer = styled.div`
   width: 200px;
   /* width: 5%; */
   margin: 20px;
-  /* background-color: brown; */
+  background-color: white;
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: 1px solid lightgray;
-
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border: 1px solid gainsboro;
+  transition: all 0.2s ease-in-out;
   :hover {
+    transform: scale(1.05);
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   }
 `;
 

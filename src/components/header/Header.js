@@ -1,16 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import SearchIcon from "@material-ui/icons/Search";
 
 function Header() {
   return (
     <HeaderContainer>
-      <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-        <HeaderTitle
-          src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/images%2FKakaoTalk_Photo_2021-06-15-15-42-32.jpeg?alt=media&token=ad6b6ba0-8534-49d2-a083-823106ce2261"
-          style={{ height: "120px", marginTop: -10, marginBottom: 0 }}
-        />
-      </Link>
+      <TitleSearch>
+        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+          <HeaderTitle
+            src="https://firebasestorage.googleapis.com/v0/b/hmhome-30ed7.appspot.com/o/images%2Fnu.png?alt=media&token=eb92b98a-ee3a-4eee-b45e-698db61a3e15"
+            style={{ height: "140px", marginTop: -10, marginBottom: -15 }}
+          />
+        </Link>
+        <SearchContainer>
+          <SearchIcon />
+          <Search placeholder="検索する" />
+        </SearchContainer>
+      </TitleSearch>
       <HeaderMenus>
         <Link to="/notice" style={{ textDecoration: "none", color: "white" }}>
           <HeaderMenu1>お知らせ</HeaderMenu1>
@@ -48,11 +55,39 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-family: "RocknRoll One", sans-serif;
+`;
+const TitleSearch = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const HeaderTitle = styled.img`
-  margin: 20px;
+  /* margin: 10px; */
+`;
+
+const SearchContainer = styled.div`
+  height: 25px;
+  width: 400px;
+  border: none;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  padding: 10px 20px;
+  color: gray;
+  margin-top: 50px;
+  margin-left: 150px;
+  > input {
+    outline: 0;
+    margin-left: 10px;
+    font-size: 15px;
+  }
+`;
+const Search = styled.input`
+  border: none;
+  border-radius: 30px;
 `;
 
 const HeaderMenus = styled.div`
@@ -60,72 +95,72 @@ const HeaderMenus = styled.div`
   justify-content: space-around;
   width: 85%;
   text-align: center;
+  font-size: 20px;
 `;
 
 const HeaderMenu1 = styled.div`
-  /* width: 13%; */
   color: #222222;
-  padding: 6px;
+  padding: 5px 20px 5px 20px;
+  transition: all 0.8s ease;
+  border-radius: 30px;
   :hover {
-    background-color: black;
+    background-color: #212121;
     color: white;
-    border-radius: 10px;
     cursor: pointer;
   }
 `;
 const HeaderMenu2 = styled.div`
-  /* width: 13%; */
   color: #222222;
-  padding: 6px;
+  padding: 5px 20px 5px 20px;
+  transition: all 0.8s ease;
+  border-radius: 30px;
   :hover {
-    background-color: black;
+    background-color: #212121;
     color: white;
-    border-radius: 10px;
     cursor: pointer;
   }
 `;
 const HeaderMenu3 = styled.div`
-  /* width: 13%; */
-  font-size: small;
   color: #222222;
-  padding: 6px;
+  padding: 5px 20px 5px 20px;
+  transition: all 0.8s ease;
+  border-radius: 30px;
   :hover {
-    background-color: black;
+    background-color: #212121;
     color: white;
-    border-radius: 10px;
     cursor: pointer;
   }
 `;
 const HeaderMenu4 = styled.div`
-  /* width: 13%; */
   color: #222222;
-  padding: 6px;
+  padding: 5px 20px 5px 20px;
+  transition: all 0.8s ease;
+  border-radius: 30px;
   :hover {
-    background-color: black;
+    background-color: #212121;
     color: white;
-    border-radius: 10px;
     cursor: pointer;
   }
 `;
 const HeaderMenu5 = styled.div`
-  /* width: 13%; */
   color: #222222;
-  padding: 6px;
+  padding: 5px 20px 5px 20px;
+  transition: all 0.8s ease;
+  border-radius: 30px;
   :hover {
-    background-color: black;
+    background-color: #212121;
     color: white;
-    border-radius: 10px;
     cursor: pointer;
   }
 `;
 const HeaderMenu6 = styled.div`
-  /* width: 13%; */
   color: #222222;
-  padding: 6px;
+  padding: 5px 20px 5px 20px;
+  transition: all 0.8s ease;
+  border-radius: 30px;
   :hover {
-    background-color: black;
+    background-color: #212121;
     color: white;
-    border-radius: 10px;
     cursor: pointer;
   }
 `;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import ContentCard from "../fansign/ContentCard";
-import EventSlider from "../fansign/EventSlider";
+import ContentCard from "./ContentCard";
+import EventSlider from "./EventSlider";
 
 function Home() {
   return (
@@ -41,10 +41,10 @@ const ContentCardContainer = styled.div`
     width: 8px;
 
     /* 가로 스크롤 높이 */
-    height: 8px;
+    height: 12px;
 
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.4);
+    color: #212121;
   }
   &::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.3);

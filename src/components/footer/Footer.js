@@ -26,7 +26,7 @@ export default Footer;
 const FooterContainer = styled.div`
   text-align: center;
   height: 5vh;
-  background-color: #ff88a7;
+  background-color: #ff88a8a9;
   color: white;
   align-items: center;
   display: flex;
