@@ -26,11 +26,11 @@ class EditorComponent extends Component {
         ["clean"],
         ["blockquote", "link", "code-block", "formula"], // media
       ],
-      handlers: {
-        image: this.imageHandler,
-      },
+      // handlers: {
+      //   image: this.imageHandler,
+      // },
     },
-    imageResize: false,
+    // imageResize: false,
   };
 
   formats = [
@@ -55,7 +55,7 @@ class EditorComponent extends Component {
   render() {
     const { value, onChange } = this.props;
     return (
-      <div style={{ height: "650px" }}>
+      <div style={{ height: "650px", marginTop: "30px" }}>
         <ReactQuill
           style={{ height: "600px" }}
           theme="snow"

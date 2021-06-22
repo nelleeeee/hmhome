@@ -49,8 +49,8 @@ function Header() {
 export default Header;
 
 const HeaderContainer = styled.div`
-  height: 20vh;
-  /* background-color: #ba55d3; */
+  height: 21vh;
+  background-color: #ffe401;
   /* color: black; */
   display: flex;
   flex-direction: column;
@@ -96,6 +96,7 @@ const HeaderMenus = styled.div`
   width: 85%;
   text-align: center;
   font-size: 20px;
+  /* padding-bottom: 50px; */
 `;
 
 const HeaderMenu1 = styled.div`

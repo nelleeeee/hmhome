@@ -39,23 +39,6 @@ const Write = () => {
     setCategory(event.target.value);
   };
 
-  // 글쓰기 버튼
-  const history = useHistory();
-  const makeWrite = e => {
-    e.preventDefault();
-    db.collection("content").doc().set({
-      title: title,
-      aut: aut,
-      content: desc,
-      category: category,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      fileUrl: fileUrl,
-    });
-    history.push({
-      pathname: "/",
-    });
-  };
-
   // 타이틀 state
   const [title, setTitle] = useState("");
 
@@ -75,6 +58,42 @@ const Write = () => {
   const [dis, setDis] = useState(true);
   const handleUrl = e => {
     setFileUrl(e);
+  };
+
+  // 해쉬태그
+  const [hashes, setHashes] = useState("");
+
+  const handleHash = e => {
+    setHashes(e.target.value);
+  };
+
+  let hashTags = [];
+  const HASHTAG_FORMATTER = string => {
+    string.split(/((?:^|\s)(?:#[a-z\d-]+))/gi).map(v => {
+      if (v.includes("#")) {
+        hashTags.push(v);
+      }
+    });
+  };
+
+  // 글쓰기 버튼
+  const history = useHistory();
+  const makeWrite = e => {
+    e.preventDefault();
+    HASHTAG_FORMATTER(hashes);
+    db.collection("content").doc().set({
+      title: title,
+      aut: aut,
+      content: desc,
+      category: category,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      fileUrl: fileUrl,
+      hashTags: hashTags,
+      view: 0,
+    });
+    history.push({
+      pathname: "/",
+    });
   };
 
   return (
@@ -109,6 +128,11 @@ const Write = () => {
         />
       </EditorCategoryAut>
       <ImageUploader handleUrl={handleUrl} setDis={setDis} />
+      <HashTags
+        placeholder="# HASH TAG(#과 띄어쓰기로 구분)"
+        value={hashes}
+        onChange={handleHash}
+      />
       <EditorComponent value={desc} onChange={onEditorChange} />
       {title && aut && desc && dis ? (
         <EditorWriteButton
@@ -159,3 +183,7 @@ const EditorCategory = styled(TextField)``;
 const EditorAut = styled(TextField)``;
 
 const EditorWriteButton = styled(Button)``;
+
+const HashTags = styled(TextField)`
+  width: 680px;
+`;

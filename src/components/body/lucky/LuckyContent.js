@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { db } from "../../../firebase";
+import Share from "../../hooks/Share";
 
 function LuckyContent({ match }) {
   const { id } = match.params;
@@ -16,14 +17,15 @@ function LuckyContent({ match }) {
   }, []);
   return (
     <LuckyContentContainer>
-      <LuckyContentImage src={`${luckyData.fileUrl}}`} />
-      <LuckyContentTitle>{`${luckyData.title}`}</LuckyContentTitle>
+      <LuckyContentImage src={`${luckyData?.fileUrl}}`} />
+      <LuckyContentTitle>{`${luckyData?.title}`}</LuckyContentTitle>
 
       <LuckyContentDetail>
         <LuckyContentDetailInfo
-          dangerouslySetInnerHTML={{ __html: luckyData.content }}
+          dangerouslySetInnerHTML={{ __html: luckyData?.content }}
         />
       </LuckyContentDetail>
+      <Share />
     </LuckyContentContainer>
   );
 }

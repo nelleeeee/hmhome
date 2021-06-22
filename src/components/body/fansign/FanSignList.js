@@ -14,7 +14,7 @@ function FanSignList() {
           snapshot.docs.map(doc => ({ id: doc.id, data: doc.data() }))
         );
       });
-  }, []);
+  }, [fanLists]);
   return (
     <Container>
       <FanSignListTitle>サイン会代行</FanSignListTitle>
@@ -22,7 +22,7 @@ function FanSignList() {
         {fanLists?.map(
           ({
             id,
-            data: { aut, createdAt, category, title, content, fileUrl },
+            data: { aut, createdAt, category, title, content, fileUrl, view },
           }) => (
             <FanSignListCard
               key={id}
@@ -33,6 +33,7 @@ function FanSignList() {
               title={title}
               content={content}
               fileUrl={fileUrl}
+              view={view}
             />
           )
         )}

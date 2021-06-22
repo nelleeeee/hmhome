@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { db } from "../../../firebase";
+import Share from "../../hooks/Share";
 
 function EventsContent({ match }) {
   const { id } = match.params;
   const [eventData, setEventData] = useState([]);
+  const url = "EventsContent/" + id;
   useEffect(() => {
     db.collection("content")
       .doc(id)
@@ -12,16 +14,18 @@ function EventsContent({ match }) {
       .then(doc => {
         setEventData(doc.data());
       });
-  }, []);
+  }, [eventData]);
+
   return (
     <EventsContentContainer>
-      <EventsContentImage src={`${eventData.fileUrl}}`} />
-      <EventsContentTitle>{`${eventData.title}`}</EventsContentTitle>
+      <EventsContentImage src={`${eventData?.fileUrl}}`} />
+      <EventsContentTitle>{`${eventData?.title}`}</EventsContentTitle>
 
       <EventsContentDetail>
         <EventsContentDetailInfo
-          dangerouslySetInnerHTML={{ __html: eventData.content }}
+          dangerouslySetInnerHTML={{ __html: eventData?.content }}
         />
+        <Share url={url} title={eventData?.title} />
       </EventsContentDetail>
     </EventsContentContainer>
   );

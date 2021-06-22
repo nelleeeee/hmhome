@@ -1,13 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { db } from "../../../firebase";
 
-function LuckyListCard({ id, title, content, fileUrl }) {
+function LuckyListCard({ id, title, content, fileUrl, view }) {
+  const viewUpdate = () => {
+    db.collection("content")
+      .doc(id)
+      .update({
+        view: view + 1,
+      });
+  };
   const truncate = (string, n) => {
     return string?.length > n ? string.substr(0, n - 1) + " . . ." : string;
   };
   return (
     <Link
+      onClick={viewUpdate}
       to={`/EventsContent/${id}`}
       style={{
         textDecoration: "none",

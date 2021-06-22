@@ -22,7 +22,7 @@ function LuckyList() {
         {luckyLists?.map(
           ({
             id,
-            data: { aut, createdAt, category, title, content, fileUrl },
+            data: { aut, createdAt, category, title, content, fileUrl, view },
           }) => (
             <LuckyListCard
               key={id}
@@ -33,6 +33,7 @@ function LuckyList() {
               title={title}
               content={content}
               fileUrl={fileUrl}
+              view={view}
             />
           )
         )}

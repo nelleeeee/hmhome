@@ -1,68 +1,93 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
-function GoodsListCard() {
+import { db } from "../../../firebase";
+function GoodsListCard({ id, title, content, fileUrl, view }) {
+  const viewUpdate = () => {
+    db.collection("content")
+      .doc(id)
+      .update({
+        view: view + 1,
+      });
+  };
+  const truncate = (string, n) => {
+    return string?.length > n ? string.substr(0, n - 1) + " . . ." : string;
+  };
   return (
     <Link
-      to="/EventsContent"
-      style={{ textDecoration: "none", color: "black" }}
+      onClick={viewUpdate}
+      to={`/EventsContent/${id}`}
+      style={{
+        textDecoration: "none",
+        color: "black",
+        display: "flex",
+        flexGrow: "1",
+        flex: "50%",
+        margin: "0px auto",
+        height: "100%",
+      }}
     >
-      <GoodsListCardContainer>
-        <GoodsListCardTitle>
-          韓国SOUNDWAVE 【MONSTA X《ONE OF A KIND》】ラキドロ購入イベント
-        </GoodsListCardTitle>
+      <GoodsListCardTitle>{`${title}`} </GoodsListCardTitle>
 
-        <GoodsListCardContent>
-          <GoodsListCardImage src="http://www.newstap.co.kr/news/photo/202011/122792_203430_1117.jpg" />
-          <GoodsListCardDetail>
-            韓国サイト【TXT《FREEZE》】で行われる購入イベントの購入代行をいたします。
-            数量限りの購入イベントで … 続きを読む
-          </GoodsListCardDetail>
-        </GoodsListCardContent>
-      </GoodsListCardContainer>
+      <GoodsListCardContent>
+        <GoodsListCardImage src={`${fileUrl}`} />
+        <GoodsListCardDetail
+          dangerouslySetInnerHTML={{ __html: truncate(content, 500) }}
+        />
+      </GoodsListCardContent>
     </Link>
   );
 }
 
 export default GoodsListCard;
 
-const GoodsListCardContainer = styled.div`
-  height: 600px;
-  width: 60%;
-  margin: auto;
-  /* background-color: brown; */
+const GoodsListCardContent = styled.div`
+  width: 70%;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  border: 1px solid lightgray;
+  align-items: center;
+  border: 1px solid gainsboro;
   margin-top: 20px;
-  margin-bottom: 30px;
-  min-width: 550px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
+  margin-bottom: 100px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  font-family: "RocknRoll One", sans-serif;
+  margin: 20px;
   :hover {
     cursor: pointer;
   }
-`;
-
-const GoodsListCardContent = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  hr {
+    color: lightgray;
+    width: 30%;
+    margin: auto;
+    border: none;
+    border-top: 1px solid grey;
+  }
 `;
 
 const GoodsListCardTitle = styled.div`
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   text-align: center;
-  margin: 10px;
+  margin: 20px;
+  margin-top: 20px;
+  color: #212121;
 `;
 const GoodsListCardImage = styled.img`
-  height: 70%;
-  padding: 5px;
+  width: 95%;
+
+  margin: -10px auto;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out 0.1s;
+  border-radius: 3px;
+  :hover {
+    transform: scale(1);
+  }
 `;
 const GoodsListCardDetail = styled.div`
-  margin-left: 15px;
-  padding: 5px;
+  font-size: 14px;
+  margin: auto;
+  padding: 30px;
+  color: gray;
 `;

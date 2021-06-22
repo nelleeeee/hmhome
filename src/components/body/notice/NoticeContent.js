@@ -29,14 +29,14 @@ function NoticeContent({ match }) {
       <NoticeTitle>お知らせ</NoticeTitle>
 
       <NoticeRowContainer>
-        <NoticeRowTitle>{viewData.title}</NoticeRowTitle>
+        <NoticeRowTitle>{viewData?.title}</NoticeRowTitle>
         <NoticeRowDate>
           {"date  : "}
           {makeDate()}
         </NoticeRowDate>
       </NoticeRowContainer>
-      <NoticeRowImage src={viewData.fileUrl} />
-      <NoticeText dangerouslySetInnerHTML={{ __html: viewData.content }} />
+      <NoticeRowImage src={viewData?.fileUrl} />
+      <NoticeText dangerouslySetInnerHTML={{ __html: viewData?.content }} />
     </NoticeContentContainer>
   );
 }

@@ -1,13 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { db } from "../../../firebase";
 
-function FanSignListCard({ id, title, content, fileUrl }) {
+function FanSignListCard({ id, title, content, fileUrl, view }) {
+  const viewUpdate = () => {
+    db.collection("content")
+      .doc(id)
+      .update({
+        view: view + 1,
+      });
+  };
+
   const truncate = (string, n) => {
     return string?.length > n ? string.substr(0, n - 1) + " . . ." : string;
   };
+
   return (
     <Link
+      onClick={viewUpdate}
       to={`/EventsContent/${id}`}
       style={{
         textDecoration: "none",
@@ -74,7 +85,7 @@ const FanSignListCardImage = styled.img`
   transition: all 0.3s ease-in-out 0.1s;
   border-radius: 3px;
   :hover {
-    transform: scale(1.07);
+    transform: scale(1);
   }
 `;
 const FanSignListCardDetail = styled.div`
