@@ -13,6 +13,7 @@ import Home from "./components/body/home/Home";
 import Faq from "./components/body/faq/Faq";
 import Notice from "./components/body/notice/Notice";
 import Write from "./components/hooks/Write";
+import UserWrite from "./components/hooks/UserWrite";
 import FanSignList from "./components/body/fansign/FanSignList";
 import EventsContent from "./components/body/fansign/EventsContent";
 import LuckyList from "./components/body/lucky/LuckyList";
@@ -22,6 +23,7 @@ import Info from "./components/body/info/Info";
 import Guide from "./components/sidebar/Guide";
 import LuckyContent from "./components/body/lucky/LuckyContent";
 import GoodsContent from "./components/body/goods/GoodsContent";
+import QnaContent from "./components/body/faq/QnaContent";
 
 function App() {
   return (
@@ -49,10 +51,12 @@ function App() {
               <Route exact path="/lucky/:id" component={LuckyContent} />
               <Route exact path="/goods" component={GoodsList} />
               <Route exact path="/goods/:id" component={GoodsContent} />
+              <Route exact path="/faq" component={Faq} />
+              <Route exact path="/qna/:id" component={QnaContent} />
               <Route exact path="/guide" component={Guide} />
               <Route exact path="/info" component={Info} />
               <Route exact path="/write" component={Write} />
-              <Route exact path="/faq" component={Faq} />
+              <Route exact path="/userwrite" component={UserWrite} />
               <Route exact path="/" component={Home} />
             </AppBody>
           </SidebarAppBody>

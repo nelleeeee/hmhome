@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-function GoodsContent() {
-  return <Container></Container>;
+function fix() {
+  return <Container>수정</Container>;
 }
 
-export default GoodsContent;
+export default fix;
 
 const Container = styled.div``;

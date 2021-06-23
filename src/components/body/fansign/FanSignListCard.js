@@ -80,12 +80,12 @@ const FanSignListCardTitle = styled.div`
 const FanSignListCardImage = styled.img`
   width: 95%;
 
-  margin: -10px auto;
+  margin: 0px auto;
   margin-bottom: 20px;
   transition: all 0.3s ease-in-out 0.1s;
   border-radius: 3px;
   :hover {
-    transform: scale(1);
+    transform: scale(1.056);
   }
 `;
 const FanSignListCardDetail = styled.div`

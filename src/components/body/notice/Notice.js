@@ -17,7 +17,7 @@ function Notice() {
           }))
         );
       });
-  }, []);
+  }, [contentLists]);
 
   return (
     <NoticeContainer>

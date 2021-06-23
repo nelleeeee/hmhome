@@ -26,6 +26,11 @@ function EventsContent({ match }) {
           dangerouslySetInnerHTML={{ __html: eventData?.content }}
         />
         <Share url={url} title={eventData?.title} />
+        <Hashes>
+          {eventData?.hashTags?.map(hash => (
+            <Hash>{hash}</Hash>
+          ))}
+        </Hashes>
       </EventsContentDetail>
     </EventsContentContainer>
   );
@@ -55,11 +60,34 @@ const EventsContentTitle = styled.div`
 
 const EventsContentDetail = styled.div`
   margin-bottom: 20px;
+  flex: 1;
 `;
 
 const EventsContentDetailInfo = styled.div`
   margin-bottom: 20px;
   br {
     margin-bottom: 3px;
+  }
+`;
+
+const Hashes = styled.div`
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  flex: 0.5;
+  flex-wrap: wrap;
+`;
+const Hash = styled.div`
+  background-color: #ffe600a4;
+  color: #444444;
+  font-weight: 600;
+  padding: 5px 15px 5px 15px;
+  border-radius: 30px;
+  margin: 5px;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    background-color: #ffe600;
+    color: #212121;
+    transform: scale(1.05);
   }
 `;

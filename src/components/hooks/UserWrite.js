@@ -14,31 +14,6 @@ const Write = () => {
     setDesc(value);
   }
 
-  // 카테고리 셀렉트
-  const categories = [
-    {
-      value: "공지사항",
-      label: "공지사항",
-    },
-    {
-      value: "펜사인회",
-      label: "펜사인회",
-    },
-    {
-      value: "럭키드로우",
-      label: "럭키드로우",
-    },
-    {
-      value: "상품",
-      label: "상품",
-    },
-  ];
-  const [category, setCategory] = useState("공지사항");
-
-  const handleChange = event => {
-    setCategory(event.target.value);
-  };
-
   // 타이틀 state
   const [title, setTitle] = useState("");
 
@@ -48,50 +23,28 @@ const Write = () => {
 
   // 글쓴이 state
   const [aut, setAut] = useState("");
-
   const handleAut = e => {
     setAut(e.target.value);
   };
 
-  // 파일 이름 state
-  const [fileUrl, setFileUrl] = useState("");
-  const [dis, setDis] = useState(true);
-  const handleUrl = e => {
-    setFileUrl(e);
-  };
-
-  // 해쉬태그
-  const [hashes, setHashes] = useState("");
-
-  const handleHash = e => {
-    setHashes(e.target.value);
-  };
-
-  let hashTags = [];
-  const HASHTAG_FORMATTER = string => {
-    string.split(/((?:^|\s)(?:#[a-z\d-]+))/gi).map(v => {
-      if (v.includes("#")) {
-        hashTags.push(v);
-      }
-    });
+  // Password state
+  const [password, setPassword] = useState("");
+  const handlePassword = e => {
+    setPassword(e.target.value);
   };
 
   // 글쓰기 버튼
   const history = useHistory();
-  console.log(history);
 
   const makeWrite = e => {
     e.preventDefault();
-    HASHTAG_FORMATTER(hashes);
     db.collection("content").doc().set({
       title: title,
+      password,
       aut: aut,
       content: desc,
-      category: category,
+      category: "QNA",
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      fileUrl: fileUrl,
-      hashTags: hashTags,
-      view: 0,
     });
     history.push({
       pathname: "/",
@@ -107,20 +60,8 @@ const Write = () => {
         value={title}
         onChange={handleTitle}
       />
+
       <EditorCategoryAut style={{ marginBottom: "20px" }}>
-        <EditorCategory
-          select
-          label="말머리"
-          value={category}
-          onChange={handleChange}
-          style={{ marginTop: "20px", width: "45%" }}
-        >
-          {categories.map(option => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </EditorCategory>
         <EditorAut
           label="글쓴이"
           variant="outlined"
@@ -128,15 +69,18 @@ const Write = () => {
           onChange={handleAut}
           style={{ marginTop: "20px", width: "45%" }}
         />
+        <EditorPassword
+          label="Password"
+          variant="outlined"
+          style={{ marginTop: "20px" }}
+          value={password}
+          onChange={handlePassword}
+          type="password"
+        />
       </EditorCategoryAut>
-      <ImageUploader handleUrl={handleUrl} setDis={setDis} />
-      <HashTags
-        placeholder="# HASH TAG(#과 띄어쓰기로 구분)"
-        value={hashes}
-        onChange={handleHash}
-      />
+
       <EditorComponent value={desc} onChange={onEditorChange} />
-      {title && aut && desc && dis ? (
+      {aut && desc ? (
         <EditorWriteButton
           onClick={makeWrite}
           type="submit"
@@ -167,25 +111,28 @@ const EditorContainer = styled.div`
   width: 90%;
   min-width: 600px;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
 `;
 
 const EditorTitle = styled(TextField)`
-  width: 650px;
+  width: 80%;
 `;
 
 const EditorCategoryAut = styled.div`
-  width: 650px;
+  /* width: 650px; */
+  width: 80%;
   display: flex;
+  flex-grow: 1;
   align-items: center;
   justify-content: space-evenly;
 `;
-const EditorCategory = styled(TextField)``;
-const EditorAut = styled(TextField)``;
+const EditorAut = styled(TextField)`
+  flex: 0.5;
+`;
+const EditorPassword = styled(TextField)`
+  flex: 0.5;
+`;
 
 const EditorWriteButton = styled(Button)``;
-
-const HashTags = styled(TextField)`
-  width: 680px;
-`;

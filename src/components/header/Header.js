@@ -35,7 +35,7 @@ function Header() {
           <HeaderMenu4>グッズ代行</HeaderMenu4>
         </Link>
         <Link to="/faq" style={{ textDecoration: "none", color: "white" }}>
-          <HeaderMenu5>お問合せ</HeaderMenu5>
+          <HeaderMenu5>お問い合わせ</HeaderMenu5>
         </Link>
 
         <Link to="/info" style={{ textDecoration: "none", color: "white" }}>
